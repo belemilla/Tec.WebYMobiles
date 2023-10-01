@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Propina</title>
+</head>
+<body>
+    <h1>Calculadora de Propina</h1>
+    <form id="calculadoraForm">
+        <label for="monto">Monto de la boleta (CLP): </label>
+        <input type="number" id="monto" required>
+        <br>
+        <label for="porcentajePropina">Porcentaje de propina:</label>
+        <select id="porcentajePropina">
+            <option value="10">10%</option>
+            <option value="15">15%</option>
+            <option value="20">20%</option>
+        </select>
+        <br>
+        <button type="button" onclick="calcularPropina()">Calcular</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularPropina() {
+            // Obtener el valor del monto de la boleta y el porcentaje de propina seleccionado
+            const montoBoleta = parseFloat(document.getElementById("monto").value);
+            const porcentajePropina = parseInt(document.getElementById("porcentajePropina").value);
+
+            
+            if (isNaN(montoBoleta) || montoBoleta <= 0) {
+                alert("Ingrese un monto válido.");
+                return;
+            }
+
+            
+            if (isNaN(porcentajePropina) || porcentajePropina <= 0) {
+                alert("Seleccione un porcentaje de propina válido.");
+                return;
+            }
+
+            
+            const propina = (montoBoleta * porcentajePropina) / 100;
+            const totalConPropina = montoBoleta + propina;
+
+            
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `
+                <p>Monto de la boleta: CLP ${montoBoleta.toFixed(2)}</p>
+                <p>Propina (${porcentajePropina}%): CLP ${propina.toFixed(2)}</p>
+                <p>Total a pagar: CLP ${totalConPropina.toFixed(2)}</p>
+            `;
+        }
+ 
+    </script>
+</body>
+     <script src="../JS/calculadora propina.js"></script>
+</html>
+
+
+
+

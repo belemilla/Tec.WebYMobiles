@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de Contraseñas Aleatorias</title>
+</head>
+<body>
+    <h1>Generador contraseñas seguras</h1>
+    <label for="longitud">Longitud de Contraseña (8-20):</label>
+    <input type="numero" id="longitud" min="8" max="20" required>
+    <br>
+    <label for="mayusculas">Incluir letras mayúsculas:</label>
+    <input type="checkbox" id="mayusculas">
+    <br>
+    <label for="minusculas">Incluir letras minúsculas:</label>
+    <input type="checkbox" id="minusculas">
+    <br>
+    <label for="numeros">Incluir números:</label>
+    <input type="checkbox" id="numeros">
+    <br>
+    <label for "caracteres especiales">Incluir caracteres especiales:</label>
+    <input type="checkbox" id="caracteres especiales">
+    <br>
+    <button id="generar-contrasena">Generar Contraseña</button>
+    <br>
+    <label for="contrasena-generada">Contraseña Generada:</label>
+    <input type="text" id="contrasena-generada" readonly>
+    <script src="generador_contrasena.js"></script>
+</body>
+</html>
+
+

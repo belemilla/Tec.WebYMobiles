@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador de letras</title>
+</head>
+<body>
+    <h1>Contador de letras</h1>
+    
+    <label for="frase">Ingrese una frase: </label>
+    <input type="text" id="frase"><br><br>
+
+    <label for="letra">Ingrese una letra: </label>
+    <input type="text" id="letra"><br><br>
+
+    <button onclick="contarLetras()">Contar letras</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function contarLetras() {
+          
+            var frase = document.getElementById("frase").value;
+            var letra = document.getElementById("letra").value;
+
+          
+            var contador = 0;
+
+           
+            for (var i = 0; i < frase.length; i++) {
+                
+                if (frase.charAt(i) === letra) {
+                    contador++;
+                }
+            }
+
+            
+            document.getElementById("resultado").textContent = `La letra '${letra}' aparece ${contador} veces en la frase '${frase}'.`;
+        }
+       
+</body>
+</html>

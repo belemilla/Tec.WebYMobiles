@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validar de Nombre de Usuario</title>
+</head>
+<body>
+    <h1>validar de Nombre de Usuario</h1>
+    
+    <form>
+        <label for="nombreUsuario">Nombre de usuario:</label>
+        <input type="text" id="nombreUsuario" required><br><br>
+        <button type="button" onclick="validarUsuario()">Validar</button>
+    </form>
+
+    <p id="mensajeValidacion"></p>
+
+    <script>
+        function validarUsuario() {
+            
+            var nombreUsuario = document.getElementById("nombreUsuario").value;
+
+           
+            if (nombreUsuario.length < 6) {
+                document.getElementById("mensajeValidacion").textContent = "El nombre de usuario debe tener al menos 6 caracteres.";
+                return;
+            }
+
+           
+            if (!/^[a-zA-Z]/.test(nombreUsuario)) {
+                document.getElementById("mensajeValidacion").textContent = "El nombre de usuario debe comenzar con una letra.";
+                return;
+            }
+
+            
+            if (!/\d$/.test(nombreUsuario)) {
+                document.getElementById("mensajeValidacion").textContent = "El nombre de usuario ingresado debe terminar con un número.";
+                return;
+            }
+
+          
+            if (!/[a-zA-Z]/.test(nombreUsuario)) {
+                document.getElementById("mensajeValidacion").textContent = "El nombre de usuario debe contener al menos una letra además de números.";
+                return;
+            }
+
+            
+            document.getElementById("mensajeValidacion").textContent = "El nombre de usuario es válido.";
+        }
+       
+</body>
+</html>

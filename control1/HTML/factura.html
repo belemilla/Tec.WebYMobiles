@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calcular Factura</title>
+</head>
+<body>
+    <h1>Calcular Factura</h1>
+    
+    <form>
+        <label for="cantidadSinIVA">Cantidad sin IVA:</label>
+        <input type="text" id="cantidadSinIVA" required><br><br>
+
+        <label for="porcentajeIVA">Porcentaje de IVA (opcional):</label>
+        <input type="text" id="porcentajeIVA"><br><br>
+
+        <button type="button" onclick="calcularFactura()">Calcular Total</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularFactura() {
+           
+            var cantidadSinIVA = parseFloat(document.getElementById("cantidadSinIVA").value);
+            var porcentajeIVA = parseFloat(document.getElementById("porcentajeIVA").value);
+
+         
+            if (isNaN(porcentajeIVA)) {
+                var totalFactura = cantidadSinIVA + (cantidadSinIVA * 0.19); 
+            } else {
+                var totalFactura = cantidadSinIVA + (cantidadSinIVA * (porcentajeIVA / 100));
+            }
+
+          
+            if (typeof totalFactura === "number") {
+                document.getElementById("resultado").textContent = "El total de la factura es: " + totalFactura.toFixed(2);
+            } else {
+                document.getElementById("resultado").textContent = "Por favor, ingrese valores válidos.";
+            }
+        }
+        <script src="../JS/factura.js"></script>
+</body>
+</html>

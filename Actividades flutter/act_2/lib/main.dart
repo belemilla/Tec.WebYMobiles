@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
         await launch(url);
       } else {
         
-        print('No se pudo abrir la URL');
+        print('No se puede abrir la URL');
       }
     } catch (e) {
       

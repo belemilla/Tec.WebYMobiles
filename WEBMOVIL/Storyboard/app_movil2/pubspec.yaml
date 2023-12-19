@@ -10,15 +10,29 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  
+ 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+ 
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/logo1.png
+    - assets/images/logo1.png
+    - assets/pdf/Busca primero el reino de Dios.pdf
+    - assets/pdf/Desde el oriente azul.pdf
+    - assets/pdf/Despierta.pdf
+    - assets/pdf/Los presentes tiempos.pdf
+    - assets/pdf/Que grande es Dios.pdf
+    - assets/pdf/Te lo debo a ti.pdf
+    - assets/pdf/Tu eres el alfarero.pdf
+  
+  
+  
+
  
 
